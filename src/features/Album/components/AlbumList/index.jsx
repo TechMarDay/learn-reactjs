@@ -4,25 +4,23 @@ import './style.scss';
 import Album from '../Album';
 
 AlbumList.propTypes = {
-    ablumList: PropTypes.array.isRequired,
+  ablumList: PropTypes.array.isRequired,
 };
 
 AlbumList.defaultProps = {
-    ablumList: []
-}
+  ablumList: [],
+};
 
 function AlbumList({ ablumList }) {
-    return (
-        <ul className="album-list">
-            {ablumList.map((
-                ablum => (
-                    <li key={ablum.id} >
-                        <Album album={ablum} />
-                    </li>
-                )
-            ))}
-        </ul>
-    );
+  return (
+    <ul className="album-list">
+      {ablumList.map((ablum) => (
+        <li key={ablum.id}>
+          <Album album={ablum} />
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default AlbumList;

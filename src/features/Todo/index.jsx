@@ -1,3 +1,4 @@
+import NotFound from 'components/NotFound';
 import React, { useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import DetailPage from './pages/DetailPage';
@@ -16,7 +17,9 @@ function TodoFeature(props) {
 
             <Switch>
                 <Route path={match.path} component={ListPage} exact />
-                <Route path={`${match.path}/:todoId`} component={DetailPage} />
+                <Route path={`${match.path}/:todoId`} component={DetailPage} exact/>
+
+                <Route component={NotFound} />
             </Switch>
         </div>
     );
